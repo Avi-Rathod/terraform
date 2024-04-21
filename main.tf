@@ -1,9 +1,12 @@
 provider "aws" {
-    region = "ap-south-1"
+  region = "us-west-2" // Set your desired region
 }
-resource "aws_instance" "my_instance" {
-    ami = ""
-    instance_type = "t2.micro"
-    key_name = "jenkins"
-    security_groups = ""
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0" // Set your desired AMI ID
+  instance_type = "t2.micro" // Set your desired instance type
+  
+  tags = {
+    Name = "example-instance"
+  }
 }
